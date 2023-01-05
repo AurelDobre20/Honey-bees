@@ -49,4 +49,52 @@ ctx.stroke();
 ctx.fillStyle = 'black';
 ctx.fillRect(770, 480, 10, 20);
 
+//lines on the hive
+let counter = 0;
+for(let i = 0 ;i <11;i++){
+    ctx.beginPath();
+    ctx.moveTo(680, 380 + counter);
+    ctx.lineTo(780, 380 + counter);
+    ctx.stroke();
+    counter+=10;
+}
+//roof
+ctx.fillStyle = 'black';
+ctx.fillRect(670, 370, 120, 10);
 
+
+
+var img = new Image();
+img.src = 'assests/bee.png';
+
+img.onload = function() {
+    update();
+}
+
+x =50;
+y= 400;
+x2=1;
+  
+function update() {
+  
+       
+   
+    ctx.drawImage(img, x, y, 50, 50);
+    if(x<630){
+        x += 1;
+    }
+    ctx.clearRect(x2, y, 50, 50);
+   
+    if(x2<630){
+        if(x===629){
+            x2+=48;
+        }
+        x2 += 1;
+    }
+    // request another frame
+    requestAnimationFrame(update);
+    
+}
+
+  
+  
