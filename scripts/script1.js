@@ -5,11 +5,15 @@ var ctx = canvas.getContext("2d");
 // Set the fill style for the body
 
 
-// Draw the right wing
+
 ctx.beginPath();
 ctx.moveTo(0, 500);
 ctx.lineTo(800, 500);
 ctx.stroke();
+
+//sky
+ctx.fillStyle = '#03c2f5';
+ctx.fillRect(0, 0, 800, 500);
 
 //hive
 ctx.fillStyle = '#de751f';
@@ -64,27 +68,44 @@ ctx.fillRect(670, 370, 120, 10);
 
 
 
+
+
 var img = new Image();
-img.src = 'assests/bee.png';
+var img1 = new Image();
+img1.src = 'assests/bee.jpg';
+
+
+const btnStart = document.getElementById('btnStart');
+
+btnStart.addEventListener('click', function(){
+    img.src = 'assests/bee.jpg';
+});
 
 img.onload = function() {
     update();
+}
+img1.onload = function() {
+    ctx.drawImage(img1, 50, 400, 50, 50);
 }
 
 x =50;
 y= 400;
 x2=1;
+
+z = 50;
   
 function update() {
-  
-       
-   
+    
     ctx.drawImage(img, x, y, 50, 50);
     if(x<630){
         x += 1;
+       
     }
     ctx.clearRect(x2, y, 50, 50);
-   
+
+    ctx.fillStyle = '#03c2f5';
+    ctx.fillRect(x2, y, z, 50);
+    
     if(x2<630){
         if(x===629){
             x2+=48;
@@ -93,8 +114,5 @@ function update() {
     }
     // request another frame
     requestAnimationFrame(update);
-    
 }
 
-  
-  
