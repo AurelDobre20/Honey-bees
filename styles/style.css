@@ -1,0 +1,39 @@
+nav {
+    background-color: lightblue; /* Change the background color */
+    text-align: center;
+  }
+  
+  nav a {
+    color: white; /* Change the text color */
+    text-decoration: none; /* Remove the underline from the links */
+    padding: 10px; /* Add some padding to the links */
+    display: inline-block; /* Make the links appear next to each other */
+  }
+  
+  nav a:hover {
+    background-color: blue; /* Change the background color on hover */
+  }
+  canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid blue;
+  }
+
+  #btnStart{
+    margin-top: 300px;
+    margin-left: 150px;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  #btnStart:hover {
+    background-color: darkblue;
+  }
+  
