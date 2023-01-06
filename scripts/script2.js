@@ -3,12 +3,13 @@ window.onload = ()=>{
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-let matrixTable =[
+let matrixTable =
+[
     [null, null,null,null],
     [null, null,null,null],
     [null, null,null,null],
     [null, null,null,null]
-];
+]
 
 
 const drawTable = () => {
@@ -27,7 +28,11 @@ const drawTable = () => {
 }
 
 var img = new Image();
-img.src='assests/honeycomb.jpg'
+img.src='assests/honeycomb.jpg';
+var imgBee = new Image();
+imgBee.src='assests/angryBee.jpg';
+var imgCheck = new Image();
+imgCheck.src='assests/check.png';
 
 img.onload = function() {
     ctx.drawImage(img,0,  0, 148,148);
@@ -49,29 +54,70 @@ img.onload = function() {
     ctx.drawImage(img,152,451, 146,148);
     ctx.drawImage(img,302,451, 146,148);
     ctx.drawImage(img,452,451, 146,148);
+    drawTable();
 }
-function colorYellow(x, y){
-    if(x===0){
-        ctx.fillStyle = 'yellow';
-        ctx.fillRect(x*150, y*150, 148, 148);
+
+function drawImageCheck(x, y){
+    //ctx.fillStyle = 'yellow';
+    //ctx.fillRect(x*150, y*150, 149, 149);
+    ctx.drawImage(imgCheck, x*150, y*150, 149, 149);
+}
+
+function ranNoGenerator(){
+    return Math.floor((Math.random() * (3 - 0 + 1)) + 0);
+}
+
+function setBees(){
+    for(let i = 0; i < 4; i++){
+        matrixTable[ranNoGenerator()][ranNoGenerator()] = true;
     }
-    ctx.fillStyle = 'yellow';
-    ctx.fillRect(x*150+2, y*150+1, 148, 148);
+    
 }
+
+function checkLose(x, y){
+    //let lose = false;
+    if(matrixTable[x][y]===true){
+        for(let i = 0; i < 4; i++){
+                 for(let j = 0; j < 4; j++){
+                    if(matrixTable[i][j] === true){
+                        ctx.drawImage(imgBee,i*150, j*150, 149, 149);
+                    }
+                }
+            }
+        return true;
+    }
+    
+}
+
+let checkLosee = false;
 
 canvas.addEventListener('click', (e)=>{
     let squareX = parseInt(e.offsetX / 150);
     let squareY = parseInt(e.offsetY / 150);
+    
+    
+
+    if(checkLosee){ 
+        checkLosee = true; // if its a lose dont let the player click anymore
+        return;
+    }
+
+    checkLosee = checkLose(squareX,squareY);// check if lose
 
     console.log(squareX,squareY);
+    drawImageCheck(squareX, squareY);
+    drawTable();
+    console.log(checkLose(squareX,squareY));
 
-   
-    colorYellow(squareX, squareY);
+    
 })
 
-
-
-
+setBees();
+// for(let i = 0; i < 4; i++){
+//     for(let j = 0; j < 4; j++){
+//         console.log(matrixTable[i][j]);
+//     }
+// }
 drawTable();
 
 }
