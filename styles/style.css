@@ -45,3 +45,14 @@ nav {
     background-color: darkblue;
   }
   
+#mapDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  #map {
+     height: 450px; 
+     width: 450px;
+     margin-top: 50px;
+     
+  }
