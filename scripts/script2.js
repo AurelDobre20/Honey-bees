@@ -32,11 +32,11 @@ const drawTable = () => {
 }
 
 var img = new Image();
-img.src='assests/honeycomb.jpg';
+img.src='media/honeycomb.jpg';
 var imgBee = new Image();
-imgBee.src='assests/angryBee.png';
+imgBee.src='media/angryBee.png';
 var imgCheck = new Image();
-imgCheck.src='assests/check.png';
+imgCheck.src='media/check.png';
 
 img.onload = function() {
     ctx.drawImage(img,0,  0, 148,148);

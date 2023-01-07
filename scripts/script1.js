@@ -127,13 +127,13 @@ function drawEverythingExceptGround(){
 
 var img = new Image();
 var img1 = new Image();
-img1.src = 'assests/bee.png';
+img1.src = 'media/bee.png';
 
 
 const btnStart = document.getElementById('btnStart');
 
 btnStart.addEventListener('click', function(){
-    img.src = 'assests/bee.png';
+    img.src = 'media/bee.png';
 });
 
 img.onload = function() {

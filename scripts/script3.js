@@ -63,17 +63,17 @@ map.on('click', async function(e) {
         let min = 800000;
     
         if(no>max){
-            return 'assests/greenBee.png';
+            return 'media/greenBee.png';
         }
         if(no>mid && no<max){
-            return 'assests/orangeBee.png';
+            return 'media/orangeBee.png';
         }
         if(no<mid && no>min){
-            return 'assests/yellowBee.png';
+            return 'media/yellowBee.png';
         }
     
         if(no<min){
-            return 'assests/redBee.png';
+            return 'media/redBee.png';
         }
     }
 
