@@ -28,11 +28,13 @@ const drawTable = () => {
         ctx.moveTo(0, i);
         ctx.lineTo(600, i);
         ctx.stroke();
+
+        
     }
 }
 
 var img = new Image();
-img.src='media/honeycomb.jpg';
+img.src='media/honeycomb.jpeg';
 var imgBee = new Image();
 imgBee.src='media/angryBee.png';
 var imgCheck = new Image();
