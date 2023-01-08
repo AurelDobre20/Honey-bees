@@ -1,3 +1,5 @@
+
+
 var map = L.map('map');
 map.setView([51.505, -0.09], 13);
 
@@ -189,5 +191,66 @@ map.on('click', async function(e) {
     
   });
 
+
+var canvas = document.getElementById("canvasGeo");
+var ctx = canvas.getContext("2d");
+
+ctx.fillStyle = '#66ff66';
+ctx.fillRect(0, 50, 20, 112.5);
+
+ctx.fillStyle = 'yellow';
+ctx.fillRect(0, 162.5, 20, 112.5);
+
+ctx.fillStyle = 'orange';
+ctx.fillRect(0, 274.5, 20, 112.5);
+
+ctx.fillStyle = 'red';
+ctx.fillRect(0, 386.5, 20, 112.5);
+
+var imgGreen = new Image();
+imgGreen.src = 'media/greenBee.png';
+var imgYellow = new Image();
+imgYellow.src = 'media/yellowBee.png';
+var imgOrange = new Image();
+imgOrange.src = 'media/orangeBee.png';
+var imgRed = new Image();
+imgRed.src = 'media/redBee.png';
+
+imgGreen.onload=function(){
+    ctx.drawImage(imgGreen, 40, 90, 45, 45);
+    
+}
+
+imgYellow.onload=function(){
+    
+    ctx.drawImage(imgYellow, 40, 202.5, 45, 45);
+}
+
+imgOrange.onload=function(){
+    
+    ctx.drawImage(imgOrange, 40, 314.5, 45, 45);
+}
+
+imgRed.onload=function(){
+    
+    ctx.drawImage(imgRed, 40, 426.5, 45, 45);
+}
+ctx.font = '13px serif';
+
+ctx.fillStyle = 'black';
+ctx.fillText('Over 2 500 000', 100, 117);
+
+ctx.fillStyle = 'black';
+ctx.fillText('Between 1 600 000 and 2 500 000', 100, 230);
+
+ctx.fillStyle = 'black';
+ctx.fillText('Between 800 000 and 1 600 000', 100, 340);
+
+ctx.fillStyle = 'black';
+ctx.fillText('Less than 800 000', 100, 453);
+
+ctx.font = '16px serif';
+
+ctx.fillText('No. of beehives in EU countries', 45, 20);
 
  
