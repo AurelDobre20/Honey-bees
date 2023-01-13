@@ -1,8 +1,8 @@
-// Get a reference to the canvas and its 2D rendering context
+
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-// Set the fill style for the body
+
 
 
 function drawEnvironment(){
@@ -173,7 +173,7 @@ function update() {
         }
         //x2 += 1;
     //}
-    // request another frame
+    
     requestAnimationFrame(update);
 }
 

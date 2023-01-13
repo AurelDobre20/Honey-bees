@@ -68,10 +68,11 @@ map.on('click', async function(e) {
             return 'media/greenBee.png';
         }
         if(no>mid && no<max){
-            return 'media/orangeBee.png';
+            return 'media/yellowBee.png';
+            
         }
         if(no<mid && no>min){
-            return 'media/yellowBee.png';
+            return 'media/orangeBee.png';
         }
     
         if(no<min){
